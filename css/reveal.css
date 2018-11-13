@@ -1589,3 +1589,15 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+/* Misc own styles */
+.align-top {
+  top: 10px !important;
+}
+
+.toc-slide {
+  text-align: left;
+}
+.toc-slide .selected {
+  color: red;
+}

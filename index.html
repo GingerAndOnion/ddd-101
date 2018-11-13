@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>DDD 101</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,458 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- Title -->
+				<section id="title">
+					<h2>Domain Driven Design</h2>
+					<h2>101</h2>
+				</section>
+
+				<!-- Intro -->
+				<section id="intro">
+					<section id="foobar" class="toc-slide">
+						<h3 class="selected">Intro</h3>
+						<h3>Main concepts</h3>
+						<h3>How to develop & practise?</h3>
+						<h3>Patterns (Tactical / Strategic)</h3>
+						<h3>Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+
+					<section>How many of you have heard of Domain Driven Design / DDD?</section>
+
+					<section data-transition="none">
+						<h2>Domain driven design</h2>
+					</section>
+
+					<section data-transition="none" class="align-top">
+						<h2><i style="color:red">Domain</i> driven design</h2>
+						<br />
+						<ul>
+							<li>
+								<i>"That subject area to which the user applies the program is the domain of the software."</i>
+								<div style="font-size: 80%;">[Eric Evans, Domain-Driven Design]</div
+							></li>
+							<li>
+								<i>"A domain, in the broad sense, is what an organization does and the world it does it in."</i>
+								<div style="font-size: 80%;">[Vaughn Vernon, Implementing Domain Driven Design]</div
+							></li>
+							<li>What the business logic is about</li>
+						</ul>
+					</section>
+
+					<section data-transition="none" class="align-top">
+						<h2>Domain driven <i style="color:red">design</i></h2>
+						<br />
+						<ul>
+							<li>In context of DDD: <i>code design</i></li>
+						</ul>
+					</section>
+
+					<section data-transition="none" class="align-top">
+						<h2>Domain <i style="color:red">driven</i> design</i></h2>
+						<br />
+						<ul>
+							<li>Having focus on the domain and domain logic</i></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>What? The main parts</h2>
+						<ul>
+							<li class="fragment">Focus on domain
+									<ul>
+										<li>Communication with domain experts</li>
+										<li>Domain & domain model as a first-class citizen</li>
+									</ul>
+								</li>
+							<li class="fragment">Ubiquitous language
+								<ul><li>For the domain model in code & communication</li></ul>
+							</li>
+							<li class="fragment">Patterns for applying DDD
+								<ul>
+									<li>Tactical: Present a domain model in codebase</li>
+									<li>Strategic: Multiple contexts & models</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Why?</h2>
+						<ul>
+							<li>To understand the domain/business better
+								<ul><li>To meet the business needs better</li></ul>
+							</li>
+							<li>To promote and improve communication
+								<ul><li>Especially between "tech people" and "domain experts"</li></ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>When?</h2>
+						<ul>
+							<li>Not to be applied in every project/service</li>
+							<li>When the domain/business is at least somewhat complex</li>
+							<li>When the domain terms are not known in general</li>
+							<li>When good connection to domain experts</li>
+							<li>Overkill for e.g. simple CRUD application</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Note</h2>
+						<ul>
+							<li>Big topic - this is pretty rough overall picture</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<!-- Main concepts -->
+				<section id="concepts">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3 class="selected">Main concepts</h3>
+						<h3>How to develop & practise?</h3>
+						<h3>Patterns (Tactical / Strategic)</h3>
+						<h3>Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+
+					<section>
+						<h2>Ubiquitous language</h2>
+						<ul>
+							<li>A vocabulary for communication on the domain.</li>
+							<li>Shared by the whole team, both tech people and domain experts.</li>
+							<li>Used both in source code and speech</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Domain model</h2>
+						<ul>
+							<li>
+								<i>"A Domain Model is a set of simplifications that represent those aspects of a domain that are relevant to a particular problem."</i>
+								<div style="font-size: 80%;">[Scott Wlaschin, Domain Modeling Made Functional.]</div>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Domain model</h2>
+						<ul>
+							<li>Note: Not as realistic as possible, instead fitting for the particular purpose of the software</li>
+							<li>Iterated, refined and refactored as the knowledge of the domain increases and gets deeper</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Bounded Context</h2>
+						<ul>
+							<li>Aiming for a single well-defined domain model for a big project or company will not work well.</li>
+							<li>Concepts for ubiquitous language and domain model are well-defined within an explicit Bounded Context.</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section id="how-to-develop-and-practise">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3>Main concepts</h3>
+						<h3 class="selected"> How to develop & practise?</h3>
+						<h3>Patterns (Tactical / Strategic)</h3>
+						<h3>Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+					<!-- How to develop a domain model -->
+					<section id="how-to-develop-a-domain-model">
+						<h2>How to develop a domain model and ubiquitous language?</h2>
+						<ul>
+							<li>Not to be completed & set in stone with a single analysis</li>
+							<li>Continuous learning, iteration and refactoring</li>
+							<li>Close interaction with the domain experts</li>
+						</ul>
+					</section>
+
+					<!-- How to practise DDD -->
+					<section id="how-to-practise-ddd">
+						<h2>How to practise DDD?</h2>
+						DDD community likes patterns<br>
+						-> Common vocabulary
+						</ul>
+					</section>
+
+					<section id="how-to-practise-ddd">
+							<h2>How to practise DDD?</h2>
+							<ul>
+								<li>Tactical patterns
+									<ul><li>How to model a domain model in code</li></ul>
+									<ul><li>Roughly: Working within a single bounded context</li></ul>
+									<ul><li>Originally quite OO-centric (Java/C#)</li></ul>
+								</li>
+								<li>Strategic patterns
+									<ul><li>Roughly: Working with & integrating multiple bounded contexts</li></ul>
+								</li>
+							</ul>
+						</section>
+				</section>
+
+				<!-- Tactical patterns -->
+				<section id="tactical-patterns">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3>Main concepts</h3>
+						<h3> How to develop & practise?</h3>
+						<h3><span class="selected">Patterns</span> (<span class="selected">Tactical</span> / Strategic)</h3>
+						<h3>Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+					<section>
+						<h2>Tactical patterns</h2>
+						<ul>
+							<li>How to model a domain model in code</li>
+							<li>(Just a glimpse)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Domain model in code</h2>
+						<ul>
+							<li>A part/layer/section of the code for the domain model</li>
+							<li>Separate from infrastructure</li>
+							<li>Many options: layered architecture, hexagonal architecture, ...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Entity</h2>
+						<ul>
+							<li>An object that has identity and a thread of life</li>
+							<li>E.g. Customer</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Value object</h2>
+						<ul>
+							<li>An object without identity</li>
+							<li>Often state of an entity</li>
+							<li>E.g. Customer's Address</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aggregate</h2>
+						<ul>
+							<li>A group of entity and value objects</li>
+							<li>Accessed through a root entity</li>
+							<li>Considered as one unit for persistency & consistency</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aggregate in practice</h2>
+						<ul>
+							<li>In relational DBs / ORMs: What to load & persist as a whole</li>
+							<li>Document DBs: One aggregate - one document</li>
+							<li>Microservices: Aggregates owned by microservice</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aggregate example</h2>
+						<img src="./images/aggregate_vaugn_vernon.jpg">
+							<small>
+								Source: <a href="http://www.informit.com/articles/article.aspx?p=2020371&seqNum=4">Implementing Domain-Driven Design: Aggregates</a> (Vaughan Vernon)
+							</small>
+					</section>
+					<section>
+						<h2>There are more...</h2>
+						<ul>
+							<li>Repositories, factories, ...</li>
+							<li>(This is where it might sound quite enterprisy)</li>
+							<li>To be used when relevant</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Strategic patterns -->
+				<section id="strategic-patterns">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3>Main concepts</h3>
+						<h3> How to develop & practise?</h3>
+						<h3><span class="selected">Patterns</span> (Tactical / <span class="selected">Strategic</span>)</h3>
+						<h3>Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+					<section>
+						<h2>Strategic patterns</h2>
+						<ul>
+							<li>How to work with multiple models, bounded contexts and services</li>
+							<li>Only briefly here</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Bounded Context</h2>
+						<ul>
+							<li class="fragment">Larger project/company will have multiple models</li>
+							<li class="fragment">Attempt to create one model over all the services will fail</li>
+							<li class="fragment">Accept & embrace this -> State explicitly the context the model lives in.</li>
+							<li class="fragment">Often (but not always): one service ~ one bounded context ~ one team</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Context Mapping</h2>
+						<ul>
+							<li>Identify different models / bounded contexts and the relationships between them.</li>
+							<li>Many of DDD's strategic patterns are about these relationships</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Relationships between models</h2>
+						<ul>
+							<li>Shared Kernel: Share some part of the model between multiple bounded contexts</li>
+							<li>Customer/Supplier: Explicit customer/supplier relationship between two bounded contexts</li>
+							<li>...</li>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Anti-corruption layer</h2>
+						<ul>
+							<li>Often there are services with incompatible domain model or without a clear one at all</li>
+							<li>E.g. Legacy services, 3rd party services, ...</li>
+							<li>To avoid other system's model "corrupting" your model, create an isolation layer</li>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Further techniques -->
+				<section id="further-techniques">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3>Main concepts</h3>
+						<h3>How to develop & practise?</h3>
+						<h3>Patterns (Tactical / Strategic)</h3>
+						<h3 class="selected">Further techniques</h3>
+						<h3>Summary</h3>
+					</section>
+					<section>
+						<h2>Further techniques</h2>
+						<ul>
+							<li>Some techniques that are popular in DDD community</li>
+							<li>(Brief description & links for more)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Event sourcing</h2>
+						<ul>
+							<li>Store state as history of Domain Events</li>
+							<li>In DDD context, a single event would usually affect a single aggregate</li>
+							<li>See e.g. <a href="https://martinfowler.com/eaaDev/EventSourcing.html">here</a> for more information</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Command Query Responsibility Segregation (CQRS)</h2>
+						<ul>
+							<li>Different model for updates (Command Model) vs reading information (Query Model)</li>
+							<li>See e.g. <a href="https://martinfowler.com/bliki/CQRS.html">here</a> for more information</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Event Storming</h2>
+						<ul>
+							<li>
+								<i>"a flexible workshop format for collaborative exploration of complex business domains"</i>
+								<div style="font-size: 80%;">[<a href="https://www.eventstorming.com/">https://www.eventstorming.com/</a>]</div>
+							</li>
+							<li>Originally tool for finding aggregates. Evolved to general domain & business exploration technique</li>
+							<li>See e.g. <a href="https://www.youtube.com/watch?v=1i6QYvYhlYQ&feature=youtu.be">here</a> for more information</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- Summary -->
+				<section id="summary">
+					<section class="toc-slide">
+						<h3>Intro</h3>
+						<h3>Main concepts</h3>
+						<h3>How to develop & practise?</h3>
+						<h3>Patterns (Tactical / Strategic)</h3>
+						<h3>Further techniques</h3>
+						<h3 class="selected">Summary</h3>
+					</section>
+					<section>
+						<h2>Summary</h2>
+						<ul>
+							<li>What to take from this?</li>
+							<li>Where to learn more from?</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>What to take?<br/>(with or without DDD)</h2>
+						<ul>
+							<li>Aim to learn & understand your project's domain</li>
+							<li>Communicate with the domain experts</li>
+							<li>Aim for consistent naming for domain terms (communication, code, ...)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Do you want more?</h2>
+						<ul>
+							<li>Please come to discuss :)</li>
+							<li>Podcast episode <a href="http://www.se-radio.net/2015/05/se-radio-episode-226-eric-evans-on-domain-driven-design-at-10-years/">Eric Evans on Domain-Driven Design at 10 Years</a>
+								<ul>
+									<li>Introduction to DDD</li>
+									<li>Relationship to ES, microservices, CQRS</li>
+								</ul>
+							</li>
+							<li><a href="https://martinfowler.com/tags/domain%20driven%20design.html">Martin Fowler's Bliki</a></li>
+							<li>InfoQ has a <a href="https://www.infoq.com/minibooks/domain-driven-design-quickly">free mini ebook</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Books (that I have read)</h2>
+						<ul>
+							<li class="fragment">
+								<a href=="https://www.amazon.com/exec/obidos/ASIN/0321125215/domainlanguag-20">Domain-Driven Design</a> by Eric Evans
+								<ul>
+									<li>The "canonical DDD book" (2004)</li>
+									<li>Main content & concepts have aged pretty well, the code samples haven't so well</li>
+									<li>There is <a href="https://domainlanguage.com/ddd/reference/">reference</a> freely available</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								<a href="https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577">Implementing Domain-Driven Design</a> by Vaughn Vernon
+								<ul>
+									<li>More concrete (2013), Java/OO focus, will age</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Books (on my TODO list)</h2>
+						<ul>
+							<li class="fragment"><a href=="https://pragprog.com/book/swdddf/domain-modeling-made-functional">Domain Modeling Made Functional</a> Tackle Software Complexity with Domain-Driven Design and F#</li>
+							<li class="fragment"><a href=="https://www.manning.com/books/functional-and-reactive-domain-modeling">Functional and Reactive Domain Modeling</a> (Scala, Akka)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Some closing thoughts</h2>
+						<ul>
+							<li>Take the parts & patterns that make sense in your context</li>
+							<li>Eric Evans: Stop using DDD as an excuse for perfectionism!</li>
+							<li>Relationship of DDD & service design etc.?</li>
+						</ul>
+					</section>
+				</section>
 			</div>
 		</div>
 
